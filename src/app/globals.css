@@ -1,0 +1,37 @@
+@import url("../../public/fonts/fonts.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width:768px) {
+    .modalcomponent_content {
+        height: calc(100vh - 30px) !important;
+        margin: 15px 0;
+    }
+}
+
+input[type="checkbox"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.checkbox {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 2px #3461D6 solid;
+    margin-right: 4px;
+}
+
+.checkbox--active {
+    background-image: url(../../public/check-icon.svg);
+    background-size: contain;
+    background-position: center;
+}
