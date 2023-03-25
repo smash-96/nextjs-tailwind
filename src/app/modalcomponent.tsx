@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from "next/image";
 import QuesIcon from '../../public/question-icon.svg'
-import CheckBox from './checkBox';
+import CheckBox from './components/checkBox';
+import RangeSlider from './components/RangeSlider';
 
 type Props = { modalClose: () => void, isModal: boolean }
 function Modalcomponent(props: Props) {
@@ -47,11 +48,16 @@ function Modalcomponent(props: Props) {
                             alt="icon"
                         />
                     </p>
-                    <div className="h-[5px] w-full bg-[#F0F5FF]">
+                    {/* <div className="h-[5px] w-full bg-[#F0F5FF]">
                         <div className="h-[5px] bg-[#3461D6] w-[50%] relative">
                             <span className='absolute right-0 top-[50%] translate-y-[-50%] border-[1px] border-white w-[16px] h-[16px] rounded-[100%] bg-[#3461D6]'></span>
                         </div>
-                    </div>
+                    </div> */}
+                    <RangeSlider
+                        className="w-[100%] h-[16px]"
+                        defaultValue={45}
+                        step={20}
+                    />
                     <div className='text_otr flex items-center justify-between w-[100%]'>
                         <span className='text-sm font-semibold text-[#7F848D]'>5mins</span>
                         <span className='text-sm font-semibold text-black'>15mins</span>
