@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type Props = { checkText: boolean }
+type Props = { checkText: string }
 function CheckBox(props: Props) {
     const [isChecked, setIsChecked] = useState<boolean>(false);
     return (
