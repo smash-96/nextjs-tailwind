@@ -68,39 +68,15 @@ function Modalcomponent(props: Props) {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
-                <div className='input_otr flex items-start flex-col gap-[16px] my-[24px]'>
-                    <CheckBox
-                        checkText="Email"
-                    />
-                    <input
-                        className="theme_input"
-                        type="email"
-                        name="email"
-                        placeholder="andrew@upnotify.co"
-                    />
-                </div>
-                <div className='input_otr flex items-start flex-col gap-[16px] mb-[24px]'>
-                    <CheckBox
-                        checkText="Discord"
-                    />
-                    <input
-                        className="theme_input"
-                        type="text"
-                        name="text"
-                        placeholder="Enter Discord Webhook URL"
-                    />
-                </div>
-                <div className='input_otr flex items-start flex-col gap-[16px] mb-[24px]'>
-                    <CheckBox
-                        checkText="Slack"
-                    />
-                    <input
-                        className="theme_input"
-                        type="text"
-                        name="text"
-                        placeholder="Enter Slack Webhook URL"
-                    />
-                </div>
+                {["Email", "Discord", "Slack"].map((val, ind) => {
+                    return (
+                        <div key={ind} className='input_otr flex items-start flex-col gap-[16px] my-[24px]'>
+                            <CheckBox
+                                checkText={val}
+                            />
+                        </div>
+                    )
+                })}
                 <div className='flex items-center gap-[24px]'>
                     <button className="rounded-md w-[50%] text-lg font-semibold py-[12px] px-[24px] capitalize border-[1px] border-[#ADAFB6] text-black" onClick={props.modalClose}>
                         Cancel

@@ -18,6 +18,14 @@ function CheckBox(props: Props) {
                 />
                 {props.checkText}
             </label>
+            {isChecked && (
+                <input
+                    className="theme_input"
+                    type="text"
+                    name="text"
+                    placeholder="Enter Discord Webhook URL"
+                />
+            )}
         </>
     );
 }
